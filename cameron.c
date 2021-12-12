@@ -30,7 +30,6 @@ int main(int argc, char** argv)
 	struct Request request;
 	enum Answer response = granted;
 	int ret = 0;
-	int flag = 1;
 
 	fd = socket(AF_UNIX, SOCK_STREAM, 0);
 	if (fd < 0) {
@@ -69,5 +68,5 @@ ret:
 		fclose(comm);
 	if (fd >= 0)
 		close(fd);
-	return 0;
+	return ret;
 }
